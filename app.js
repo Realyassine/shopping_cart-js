@@ -16,10 +16,8 @@ closeCart.addEventListener('click', () => {
 })
 
     const addDataToHTML = () => {
-    // remove datas default from HTML
-
-        // add new datas
-        if(products.length > 0) // if has data
+    
+        if(products.length > 0) 
         {
             products.forEach(product => {
                 let newProduct = document.createElement('div');
@@ -34,7 +32,7 @@ closeCart.addEventListener('click', () => {
             });
         }
     }
-    listProductHTML.addEventListener('click', (event) => {
+    listProductHTML.addEventListener('click', (event) => {_
         let positionClick = event.target;
         if(positionClick.classList.contains('addCart')){
             let id_product = positionClick.parentElement.dataset.id;
