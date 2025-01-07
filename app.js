@@ -54,9 +54,20 @@ const addToCart = (product_id) => {
     }else{
         cart[positionThisProductInCart].quantity = cart[positionThisProductInCart].quantity + 1;
     }
+    showNotification();  // zedt hadi tahiya
     addCartToHTML();
     addCartToMemory();
 }
+const showNotification = (message) => {  // func show message jedida
+    const notification = document.getElementById('notification');
+    notification.innerText = message;
+    notification.style.display = 'block';
+
+    setTimeout(() => {  
+        notification.style.display = 'none';
+    }, 2000);
+};
+
 const addCartToMemory = () => {
     localStorage.setItem('cart', JSON.stringify(cart));
 }
