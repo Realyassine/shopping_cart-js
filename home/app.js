@@ -4,6 +4,7 @@ let iconCart = document.querySelector('.icon-cart');
 let iconCartSpan = document.querySelector('.icon-cart span');
 let body = document.querySelector('body');
 let closeCart = document.querySelector('.close');
+let btnAddProd = document.querySelector('#btnAddProd');
 let products = [];
 let cart = [];
 
@@ -151,4 +152,11 @@ const initApp = () => {
         }
     })
 }
+
+/*btnAddProd.addEventListener('click' , ()=>{
+    window.location.href = "addProduct.html";
+})*/
+
+
+
 initApp();
