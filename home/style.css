@@ -192,3 +192,26 @@ body.showCart .container {
     z-index: 1000;
     display: none;
 }
+
+/*new style for button*/
+.btnAdd {
+    position: fixed;
+    left: 50%;
+    bottom: 20px; /* Position at the bottom */
+    transform: translateX(-50%); /* Center horizontally */
+    padding: 15px 30px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    z-index: 1000;
+}
+
+.btnAdd:hover {
+    background-color: #0056b3;
+    transform: translateX(-50%) scale(1.05); /* Apply hover effect */
+}
