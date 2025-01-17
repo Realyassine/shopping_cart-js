@@ -1,12 +1,28 @@
-let nameProd = document.querySelector('.nameProd').value.trim();
-let descProd = document.querySelector('.descProd').value.trim();
-let prixProd = document.querySelector('.prixProd').value.trim();
 let btnAddProd = document.querySelector('.btnAddProd');
 
-let products = []
+let products = JSON.parse(localStorage.getItem('products')) || []; // Load existing products from local storage
+
 btnAddProd.addEventListener('click', () => {
-    if (!nameProd || !descProd || !prixProd) {
-        alert('matkhelich chi haja khawya!');
-    }
     
+    let nameProd = document.querySelector('.nameProd').value.trim();
+    let prixProd = document.querySelector('.prixProd').value.trim();
+
+    if (!nameProd  || !prixProd) {
+        alert('matkhelich chi haja khawya!');
+        return;
+    }
+    let newProduct = {
+        name: nameProd,
+        price: parseFloat(prixProd), 
+    };
+
+    products.push(newProduct);
+
+    localStorage.setItem('products', JSON.stringify(products));
+
+    document.querySelector('.nameProd').value = '';
+    document.querySelector('.prixProd').value = '';
+
+    alert('Product added successfully!');
+       
 });
